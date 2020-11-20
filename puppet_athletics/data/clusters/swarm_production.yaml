@@ -1,0 +1,1 @@
+puppet_athletics::profile::swarm::node::docker_version: '17.09.0~ce-0~debian'

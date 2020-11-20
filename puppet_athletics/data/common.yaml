@@ -1,0 +1,3 @@
+---
+# for some reason we dont want to manage the root password on ANY of the Athletics boxes
+profile::base::manage_root_password: false

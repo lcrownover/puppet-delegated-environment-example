@@ -1,0 +1,28 @@
+forge 'https://forge.puppet.com'
+
+
+# Modules from Puppet Forge
+
+mod 'puppetlabs/stdlib', '6.3.0'
+mod 'puppetlabs/concat', '6.2.0'
+mod 'saz-sudo', '6.0.0'
+mod 'puppetlabs-vcsrepo', '3.1.1'
+mod 'ipcrm-echo', '0.1.6'
+mod 'puppetlabs-python_task_helper', '0.4.3'
+mod 'puppetlabs-inifile', '4.2.0'
+mod 'lcrownover-facter', '0.2.3'
+
+
+# Group modules from various customers across campus
+
+mod 'puppet_cas', # College of Arts and Sciences
+  :git => 'ssh://git@git.uoregon.edu/pup/puppet_cas.git',
+  :branch => :control_branch, :default_branch => 'master'
+
+mod 'puppet_athletics', # Athletics
+  :git => 'ssh://git@git.uoregon.edu/pup/puppet_athletics.git',
+  :branch => :control_branch, :default_branch => 'master'
+
+mod 'puppet_hpcf', # High Performance Computing Facility
+  :git => 'ssh://git@git.uoregon.edu/pup/puppet_hpcf.git',
+  :branch => :control_branch, :default_branch => 'master'

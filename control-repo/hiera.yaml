@@ -1,0 +1,21 @@
+version: 5
+
+hierarchy:
+  # There should be nothing at the environment-level for nodes and clusters
+  # but this allows us to override someone else's yaml if we have to
+  - name: "Environment level node data"
+    path: "nodes/%{hostname}.yaml"
+
+  # This is the main section of hiera that does lookups for each group.
+  # The "pp_group" fact is set via a custom fact in the lib/ directory in the
+  # control-repo/site-modules/profile module.
+  - name: "puppet_%{pp_group}"
+    datadir: "modules/puppet_%{pp_group}/data/"
+    paths:
+      - "nodes/%{hostname}.yaml"
+      - "clusters/%{pp_cluster}.yaml"
+      - "common.yaml"
+
+  # Fall back to environment-level common for sitewide defaults
+  - name: "Common data"
+    path: "common.yaml"
